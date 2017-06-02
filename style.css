@@ -1,0 +1,55 @@
+h1 {
+  font-family: "Monoton";
+  font-size: 100px;
+  text-align: center;
+  border-style: double;
+}
+
+
+h2 {
+	font-family: "Josefin Slab";
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+}
+
+#start {
+	color: white;
+	padding: 1px 30px;
+	background-color: #690035;
+	position: relative;
+	left: 40%;
+	width: 20%;
+}
+
+.question {
+	font-family: "Josefin Slab";
+	text-align: center;
+	font-size: 35px;
+	color: white;
+	background-color: #ff1d8e;
+}
+
+#countDown {
+	color: #00b65a;
+}
+
+button {
+	background-color: #69b4ff;
+	padding: 0 20px;
+	width: 100%;
+}
+
+.score {
+	position: relative;
+	top: 150px;
+	font-family: "Josefin Slab";
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+}
+
+#guessField {
+	position: relative;
+	top: 700px;
+}
