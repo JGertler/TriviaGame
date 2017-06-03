@@ -10,12 +10,12 @@ $("#start").on("click", function(){
 }
 
 // the end of the game function
-var theEnd = function () {
+function theEnd () {
     console.log(timer.time);
     if (timer.time ==0 && wins<6) {
     alert("Better luck next time, sucka")
-    } else if(timer.time ==0 && wins==6){
-    alert("6 out of 6, Not bad");
+    } else if(timer.time >=0 && wins>=6){
+    alert("You weren't bad in my book..");
     };
     console.log(wins);
 }
@@ -27,16 +27,12 @@ var currentQuestion = [
 "One who is rejected by a social group",
 "What is my cat's name?",
 "What is the name of the youngest Kardashian?",
-"What is the only English word ending in the letters mt?"
+"How many English words end in the letters mt?",
+"What famous psychologist studied classical conditioning?",
+"What was the first invention ever patented in American history?"
 
 ];
 
-
-// var answerOptions = [
-// question0 =["Pariah", "Charlatan", "Iconoclast"], 
-// question1 =["Behbeh", "Schweetie", "Gemini"],
-// question2 =["Kylie", "Dream", "Cassie"]
-// ]
 
 
 
@@ -186,13 +182,126 @@ $("#answer").html("");
 
 			} else if (randomQuestion  === 3) {
 			$(".question").html(currentQuestion[3]);
-					var guessField = document.createElement("INPUT");  
-					guessField.id ="guessField3";  
-                
-                
-            }
+                    var liebtn = document.createElement("BUTTON");  
+                    liebtn.id ="lie";        
+                    var lie = document.createTextNode("207");      
+                    liebtn.appendChild(lie);                              
+                    document.getElementById("answer").appendChild(liebtn);                 
+                    var truthbtn = document.createElement("BUTTON");    
+                    truthbtn.id ="truth";       
+                    var truth = document.createTextNode("1");      
+                    truthbtn.appendChild(truth);                              
+                    document.getElementById("answer").appendChild(truthbtn);
+                    var liebtn = document.createElement("BUTTON");  
+                    liebtn.id ="lie2";        
+                    var lie = document.createTextNode("1,987");      
+                    liebtn.appendChild(lie);                              
+                    document.getElementById("answer").appendChild(liebtn);
+            
+            $("#lie").click(function() {
+            alert("you wrong sucka, the answer is 1 and it's Dreamt");
+            question();
+            losses ++;
+            $(".losses").html("Losses: " + losses);
+            }) 
 
+            $("#lie2").click(function() {
+            alert("you wrong sucka, the answer is 1 and it's Dreamt");
+            question();
+            losses ++;
+            $(".losses").html("Losses: " + losses);
+            }) 
 
+            $("#truth").click(function() {
+            alert("smartie-pants");
+            question();
+            wins ++;
+            $(".wins").html("Wins: " + wins);
+            });
+        
+
+            } else if (randomQuestion  === 4) {
+            $(".question").html(currentQuestion[4]);
+                    var truthbtn = document.createElement("BUTTON");    
+                    truthbtn.id ="truth";       
+                    var truth = document.createTextNode("Pavlov");      
+                    truthbtn.appendChild(truth);                              
+                    document.getElementById("answer").appendChild(truthbtn);
+                    var liebtn = document.createElement("BUTTON");  
+                    liebtn.id ="lie2";        
+                    var lie = document.createTextNode("Watson");      
+                    liebtn.appendChild(lie);                              
+                    document.getElementById("answer").appendChild(liebtn);
+                    var liebtn = document.createElement("BUTTON");  
+                    liebtn.id ="lie";        
+                    var lie = document.createTextNode("Freud");      
+                    liebtn.appendChild(lie);                              
+                    document.getElementById("answer").appendChild(liebtn);
+            
+            $("#lie").click(function() {
+            alert("you wrong sucka, the answer is Pavlov");
+            question();
+            losses ++;
+            $(".losses").html("Losses: " + losses);
+            }) 
+
+            $("#lie2").click(function() {
+            alert("you wrong sucka, the answer is Pavlov");
+            question();
+            losses ++;
+            $(".losses").html("Losses: " + losses);
+            }) 
+
+            $("#truth").click(function() {
+            alert("smartie-pants");
+            question();
+            wins ++;
+            $(".wins").html("Wins: " + wins);
+            });
+        
+                
+            } else if (randomQuestion  === 5) {
+                $(".question").html(currentQuestion[5]);
+
+                    var liebtn = document.createElement("BUTTON");  
+                    liebtn.id ="lie2";        
+                    var lie = document.createTextNode("The Flour Mill");      
+                    liebtn.appendChild(lie);                              
+                    document.getElementById("answer").appendChild(liebtn);
+                    var liebtn = document.createElement("BUTTON");  
+                    liebtn.id ="lie";        
+                    var lie = document.createTextNode("The Candle");      
+                    liebtn.appendChild(lie);                              
+                    document.getElementById("answer").appendChild(liebtn);                 
+                    var truthbtn = document.createElement("BUTTON");    
+                    truthbtn.id ="truth";       
+                    var truth = document.createTextNode("A Process for Making Fertilizer");      
+                    truthbtn.appendChild(truth);                              
+                    document.getElementById("answer").appendChild(truthbtn);
+ 
+            
+            $("#lie").click(function() {
+            alert("you wrong sucka, the answer is da Fertilizer processer");
+            question();
+            losses ++;
+            $(".losses").html("Losses: " + losses);
+            }) 
+
+            $("#lie2").click(function() {
+            alert("you wrong sucka, the answer is da Fertilizer processer");
+            question();
+            losses ++;
+            $(".losses").html("Losses: " + losses);
+            }) 
+
+            $("#truth").click(function() {
+            alert("smartie-pants");
+            question();
+            wins ++;
+            $(".wins").html("Wins: " + wins);
+            });
+
+        }
 
 }
 
@@ -234,9 +343,8 @@ var timer= {
     $("#countDown").html(timer.time)
     // console.log (timer.time);
     }
-
+    theEnd();
   }
-
 
  };
 
